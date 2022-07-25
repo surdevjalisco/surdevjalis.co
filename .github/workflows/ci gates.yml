@@ -1,0 +1,22 @@
+name: ci-gates
+
+# Run validation for PRs
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+
+jobs:
+  cspell-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        name: Run spell check for project and for azd
+        with:
+          node-version: "16"
+      - run: npm install -g cspell
+      - run: npm install -g cspell-dict-es-es
+      - run: cspell-dict-es-es-link
+      - run: cspell lint '**' --relative --no-progress
