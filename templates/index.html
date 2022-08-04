@@ -2,16 +2,6 @@
 
 {% block content %}
 
-<div class="flex-cols place-items-center content-center md:px-8 max-w-screen-md mx-auto my-4">
-  <img class="px-5 w-full" src="logo.png"/>
-  <div class="border-4 border-accent rounded-lg p-2 my-4 text-sm text-center space-p">
-      {{ section.content | safe}}
-  </div>
-  <div class="flex flex-col md:flex-row text-center justify-around w-full">
-      <a class="hover:text-accent" href="https://www.facebook.com/surdevjalisco"><i class="fa-brands fa-facebook"></i>/surdevjalisco</a>
-      <a class="hover:text-accent" href="https://instagram.com/surdevjalisco"><i class="fa-brands fa-instagram"></i>/surdevjalisco</a>
-      <a class="hover:text-accent" href="https://github.com/surdevjalisco"><i class="fa-brands fa-github"></i>/surdevjalisco</a>
-  </div>
-</div>
+{{ section.content | safe}}
 
 {% endblock content %}
